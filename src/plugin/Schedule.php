@@ -29,7 +29,7 @@ class Schedule
     // 监控类
     private static $guarded_second = ['AloneTcpClient', 'ZoneTcpClient',];
     // 抽奖类
-    private static $guarded_third = ['StormRaffle', 'GuardRaffle', 'PkRaffle', 'GiftRaffle', 'AnchorRaffle'];
+    private static $guarded_third = ['StormRaffle', 'GuardRaffle', 'PkRaffle', 'GiftRaffle', 'AnchorRaffle', 'Forward'];
     // 特殊 老爷处理
     private static $guarded_fourth = ['Heart'];
 
