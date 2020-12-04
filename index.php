@@ -12,8 +12,8 @@
 require 'vendor/autoload.php';
 
 
-$filename = isset($argv[1]) ? $argv[1] : 'user.conf';
+$filename = isset($argv[1]) ? $argv[1] : 'user';
 
 $app = new BiliHelper\Core\App();
-$app->load(__DIR__, $filename);
+$app->load(__DIR__, $filename . '.conf');
 $app->start();
