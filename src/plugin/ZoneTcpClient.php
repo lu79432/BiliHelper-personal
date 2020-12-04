@@ -196,13 +196,13 @@ class ZoneTcpClient
         switch ($de_raw['cmd']) {
             case 'TV_START':
                 // 小电视飞船(1)
-                $data = [
-                    'room_id' => self::$room_id,
-                    'raffle_id' => $de_raw['data']['id'],
-                    'raffle_title' => $de_raw['data']['title'],
-                    'raffle_type' => 'small_tv',
-                    'source' => $msg
-                ];
+//                $data = [
+//                    'room_id' => self::$room_id,
+//                    'raffle_id' => $de_raw['data']['id'],
+//                    'raffle_title' => $de_raw['data']['title'],
+//                    'raffle_type' => 'small_tv',
+//                    'source' => $msg
+//                ];
                 break;
             case 'SPECIAL_GIFT':
                 // 节奏风暴(1)
@@ -220,34 +220,34 @@ class ZoneTcpClient
                 break;
             case 'GUARD_LOTTERY_START':
                 // 舰长(1)
-                $data = [
-                    'room_id' => self::$room_id,
-                    'raffle_id' => $de_raw['data']['id'],
-                    'raffle_title' => '总督舰长(1)',
-                    'raffle_type' => 'guard',
-                    'source' => $msg
-                ];
+//                $data = [
+//                    'room_id' => self::$room_id,
+//                    'raffle_id' => $de_raw['data']['id'],
+//                    'raffle_title' => '总督舰长(1)',
+//                    'raffle_type' => 'guard',
+//                    'source' => $msg
+//                ];
                 break;
             case 'GUARD_MSG':
                 // 舰长(2)
                 // {"buy_type":3,"cmd":"GUARD_MSG","msg":":?淩白夜:? 在本房间开通了舰长"}
-                $data = [
-                    'room_id' => self::$room_id,
-                    'raffle_id' => self::$raffle_id++,
-                    'raffle_title' => '总督舰长(2)',
-                    'raffle_type' => 'guard',
-                    'source' => $msg
-                ];
+//                $data = [
+//                    'room_id' => self::$room_id,
+//                    'raffle_id' => self::$raffle_id++,
+//                    'raffle_title' => '总督舰长(2)',
+//                    'raffle_type' => 'guard',
+//                    'source' => $msg
+//                ];
                 break;
             case 'LOTTERY_START':
                 // 舰长(3)
-                $data = [
-                    'room_id' => $de_raw['data']['roomid'],
-                    'raffle_id' => $de_raw['data']['id'],
-                    'raffle_title' => '总督舰长(3)',
-                    'raffle_type' => 'guard',
-                    'source' => $msg
-                ];
+//                $data = [
+//                    'room_id' => $de_raw['data']['roomid'],
+//                    'raffle_id' => $de_raw['data']['id'],
+//                    'raffle_title' => '总督舰长(3)',
+//                    'raffle_type' => 'guard',
+//                    'source' => $msg
+//                ];
                 break;
             case 'ANCHOR_LOT_START':
                 // 天选时刻(1)
@@ -294,16 +294,16 @@ class ZoneTcpClient
                 $msg_self = $de_raw['msg_self'];
                 $msg_common = str_replace(' ', '', $de_raw['msg_common']);
                 $real_room_id = $de_raw['real_roomid'];
-                if (in_array($msg_type, [2, 8])) {
-                    $data = [
-                        'room_id' => $real_room_id,
-                        'raffle_id' => self::$raffle_id++,
-                        'raffle_title' => $msg_self,
-                        'raffle_type' => 'raffle',
-                        'source' => $msg
-                    ];
-                    // echo self::$room_id . '--' . $real_room_id . PHP_EOL;
-                }
+//                if (in_array($msg_type, [2, 8])) {
+//                    $data = [
+//                        'room_id' => $real_room_id,
+//                        'raffle_id' => self::$raffle_id++,
+//                        'raffle_title' => $msg_self,
+//                        'raffle_type' => 'raffle',
+//                        'source' => $msg
+//                    ];
+                // echo self::$room_id . '--' . $real_room_id . PHP_EOL;
+//                }
                 if ($msg_type == 6 && strpos($msg_common, '节奏风暴') !== false) {
                     $data = [
                         'room_id' => $real_room_id,
