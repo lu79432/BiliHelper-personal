@@ -144,7 +144,7 @@ class AnchorRaffle extends BaseRaffle
             '没有钱','女装','肥宅快乐水','哥斯拉','公主连结','pokemmo','宝可>梦','明日方舟','雪碧','公主连接',
             '专属头衔','FF14','韩元','空洞骑士','老婆饼','稀世时装','洛克衣服','帮过图','证件照','自抽号',
             '晶耀之星','伊洛纳','〇.','②元','③元','0·','繁华美化','喵喵喵','闪伊布','①圆','o点','金达摩','嗷呜',
-            '游戏位','S-追光者','OWL','勾玉','跟yo宝游戏','三元','怡宝','蛋闪迷>你冰','哥伦比亚比索','油条'
+            '游戏位','S-追光者','OWL','勾玉','跟yo宝游戏','三元','怡宝','蛋闪迷>你冰','哥伦比亚比索','油条','自画像'
         ];
         $custom_words = empty(getenv('ANCHOR_FILTER_WORDS')) ? [] : explode(',', getenv('ANCHOR_FILTER_WORDS'));
         $total_words = array_merge($default_words, $custom_words);
