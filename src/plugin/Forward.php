@@ -1,8 +1,22 @@
 <?php
+
+/**
+ *  Website: https://mudew.com/
+ *  Author: Lkeme
+ *  License: The MIT License
+ *  Email: Useri@live.cn
+ *  Updated: 2021 ~ 2022
+ */
+
 /**
  * @Blog   http://blog.jianxiaodai.com
  * @author  菜如狗怎么了
  * @date 2020-12
+ */
+
+/**
+ * 2021-3-14 FEAT:增加自动回复语言更改
+ * @author:zymooll
  */
 
 namespace BiliHelper\Plugin;
@@ -48,7 +62,10 @@ class Forward
 
     public static function start()
     {
-
+        //更改自动回复
+        if (getenv('AUTO_REPLY_TEXT') != self::$msg) {
+            self::changeReply();
+        }
         // 取关未中奖
         if (getenv('CLEAR_DYNAMIC') == 'true') {
             self::clearDynamic();
@@ -65,6 +82,15 @@ class Forward
         return true;
     }
 
+    /**
+     *更改自动回复
+     */
+    public static function changeReply()
+    {
+        self::$msg = getenv('AUTO_REPLY_TEXT');
+        $msg = self::$msg;
+        Log::info("已将自动回复改为\"{$msg}\"");
+    }
 
     /**
      * 自动转发抽奖
