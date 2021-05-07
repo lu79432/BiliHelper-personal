@@ -190,7 +190,7 @@ class Notice
             'msgtype' => 'markdown',
             'markdown' => [
                 'title' => $info['title'],
-                'content' => $info['content'],
+                'text' => $info['content'],
             ]
         ];
         $headers = [
