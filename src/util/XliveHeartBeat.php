@@ -161,7 +161,7 @@ trait XliveHeartBeat
         return [
             'code' => $r_data['code'],
             'message' => $r_data['message'],
-            'heartbeat_interval' => $rdata['heartbeat_interval']
+            'heartbeat_interval' => $rdata['heartbeat_interval'] ?? 10
         ];
     }
 
